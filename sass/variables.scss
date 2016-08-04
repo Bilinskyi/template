@@ -1,0 +1,45 @@
+$normal: 14px;
+
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == mob-and-tablet {
+    @media only screen and (max-width: $break-medium - 1)  { @content; }
+  }
+  @else if $media == desktope {
+    @media only screen and (min-width: $break-medium + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+  @else {
+    @media only screen and (max-width: #{$media}px) { @content; }
+  }
+}
+
+// media
+$break-small: 480px;
+$break-medium: 980px;
+$break-large: 1280px;
+
+$bp-xx-large:   "only screen and (min-width : 1400px)";
+$bp-x-large:    "only screen and (min-width : 1201px)";
+$bp-large:      "only screen and (max-width : 1200px)";
+$bp-medium:     "only screen and (max-width : 992px)";
+$bp-small:      "only screen and (max-width : 768px)";
+$bp-xsmall:    "only screen and (max-width : 480px)";
+$bp-xxsmall:    "only screen and (max-width : 320px)";
+
+
+// ul {
+//   @media #{$bp-small} {
+//     width: 100%;
+//   }
+// }
+
+// ul {  
+//   @include respond-to(desktope) {
+//     width: 400%;
+//   }
+// }
