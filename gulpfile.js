@@ -16,8 +16,8 @@ gulp.task('browserSync', function() {
 })
 
 gulp.task('sass', function () {
-	gulp.src('./sass/**/style.scss')
-	.pipe(sass({outputStyle: 'compact'}))
+	return gulp.src('./sass/**/style.scss')
+	.pipe(sass().on('error', sass.logError))	
 	.pipe(autoprefixer('last 5 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
 	.pipe(rename({suffix: '.min'}))
 	.pipe(minifycss())
