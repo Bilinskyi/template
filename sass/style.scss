@@ -1,93 +1,9 @@
 @import "variables.scss";
 @import "normalize.scss";
 @import "base.scss";
+@import "form.scss";
 
-.justify-c {
-  font-size: 1px;
-  text-align: justify;
-  &:after {
-    content: '';
-    display: inline-block;
-    width: 100%;
-    height: 0;
-    overflow: hidden;
-    
-  }
-}
 
-.wrapper {
-  width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-  position: relative;
-  color: #fff;
-  font-family: 'latoRegular';
-}
-
-.hide {display: none;}
-.modal {
-  width: 400px;
-  display: none;
-  padding-left: 40px;
-  padding-right: 40px;
-  font-size: 35px;
-  color: #fff;
-  background: #748fab;
-  text-align: center;
-  padding-bottom: 30px;
-  padding-top: 40px;
-}
-
-ul {
-  margin: 0;padding: 0;
-  li {
-    list-style-type: none;
-  }
-}
-
-input:not([type=submit]) {
   
-}
 
-input[type=submit] {
-  display: inline-block;
-  outline: none;
-  border: none;
-  
-  &:hover {
-    background: #6db82a;
-  }
-  &:active {
-    -webkit-transform: translateY(1px);    
-    -ms-transform: translateY(1px);    
-    transform: translateY(1px);
-  }
-}
-input.error {
-  border: 2px solid red !important;
-}
-
-.logo {
-  float: left;
-  display: block;
-  text-decoration: none;
-  position: relative;
-  z-index: 2;
-  img {
-    display: block;
-  }
-}
-
-.phone-number {
-  text-decoration: none;
-  color: #fff;
-  float: right;
-  font-size: 18px;
-  padding: 11px 0;
-  position: relative;
-  z-index: 2;
-  &:hover {
-    text-decoration: underline;
-  }
-}
 

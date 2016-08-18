@@ -20,3 +20,23 @@ body {
   font-family: 'latoRegular';
   min-width: 1200px;
 }
+
+ul {
+  margin: 0;padding: 0;
+  li {
+    list-style-type: none;
+  }
+}
+
+.justify-c {
+  font-size: 1px;
+  text-align: justify;
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    
+  }
+}
