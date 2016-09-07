@@ -25,11 +25,9 @@ gulp.task('images', function(cb) {
 });
 
 gulp.task('sass', function () {
-	return gulp.src('./sass/**/style.scss')
+	return gulp.src('./sass/**/*.scss')
 	.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-	.pipe(autoprefixer('last 10 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
-	// .pipe(rename({suffix: '.min'}))
-	// .pipe(minifycss())
+	.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
 	.pipe(gulp.dest('./css'))
 	.pipe(browserSync.reload({
 		stream: true
@@ -38,8 +36,8 @@ gulp.task('sass', function () {
 
 
 
-gulp.task('watch', ['browserSync', 'sass'], function () {
-	gulp.watch('./sass/**/style.scss', ['sass']);
+gulp.task('watch', ['browserSync'], function () {
+	gulp.watch('./sass/**/*.scss', ['sass']);
 // Reloads the browser whenever HTML or JS files change
 gulp.watch('./*.html', browserSync.reload); 
 gulp.watch('./js/**/*.js', browserSync.reload);
